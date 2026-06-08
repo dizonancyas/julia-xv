@@ -1,10 +1,19 @@
 body{
 margin:0;
 padding:0;
-background:#0f0b08;
+background:
+radial-gradient(circle at center,
+rgba(120,90,20,0.15),
+transparent 60%),
+linear-gradient(
+180deg,
+#120b06 0%,
+#050303 100%
+);
 color:#f2e3b0;
-font-family:‘Cinzel’,serif;
+font-family:'Cinzel',serif;
 text-align:center;
+overflow-x:hidden;
 }
 
 #intro{
@@ -44,12 +53,14 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 }
-
 .hero h1{
-font-family:‘Great Vibes’,cursive;
-font-size:5rem;
-margin:0;
+font-family:'Great Vibes',cursive;
+font-size:6rem;
 color:#ffd700;
+text-shadow:
+0 0 10px rgba(255,215,0,.5),
+0 0 30px rgba(255,215,0,.3);
+margin:0;
 }
 
 .hero h3{
@@ -118,4 +129,35 @@ font-weight:bold;
 border-radius:12px;
 margin-top:20px;
 font-size:18px;
+} 
+section{
+position:relative;
+border:1px solid rgba(212,175,55,.25);
+border-radius:25px;
+margin:40px 20px;
+background:rgba(255,215,0,.03);
+backdrop-filter:blur(3px);
+box-shadow:
+0 0 30px rgba(212,175,55,.08);
+}
+
+section::before{
+content:"✦";
+position:absolute;
+top:-12px;
+left:50%;
+transform:translateX(-50%);
+font-size:22px;
+color:gold;
+} 
+#countdown{
+font-size:2rem;
+font-weight:bold;
+color:#ffd700;
+padding:20px;
+border:2px solid gold;
+border-radius:20px;
+display:inline-block;
+min-width:250px;
+box-shadow:0 0 20px rgba(255,215,0,.2);
 }
