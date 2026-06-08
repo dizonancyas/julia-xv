@@ -48,4 +48,33 @@ function updateCountdown() {
 }
 
 updateCountdown();
-setInterval(updateCountdown, 1000);
+setInterval(updateCountdown, <script>
+const intro = document.getElementById("intro");
+const contenido = document.getElementById("contenido");
+const seal = document.getElementById("seal");
+const music = document.getElementById("music");
+
+seal.addEventListener("click", () => {
+  // Animación del sobre
+  seal.style.transform = "scale(1.3) rotate(-3deg)";
+  seal.style.opacity = "0";
+
+  setTimeout(() => {
+    intro.style.display = "none";
+    contenido.style.display = "block";
+
+    // efecto carta
+    contenido.classList.add("aparecer-carta");
+
+    // música
+    if (music) {
+      music.play().catch(() => {});
+    }
+
+    // scroll suave al abrir
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+  }, 700);
+});
+</script>
+
