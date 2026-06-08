@@ -11,8 +11,7 @@ scroll-behavior:smooth;
 body{
 font-family:'Cinzel',serif;
 background:
-    url("ornamento-superior.PNG") top center no-repeat,
-  url("ornamento-inferior.PNG") bottom center no-repeat,
+
 radial-gradient(circle at center,
 rgba(212,175,55,.08),
 transparent 60%),
