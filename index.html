@@ -4,53 +4,63 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mis XV Años | Julia</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+<!-- INTRO -->
 <div id="intro">
-  <div id="seal">
+  <div id="seal" style="cursor:pointer;">
     <img src="Sobre.PNG" alt="Abrir invitación">
   </div>
   <h2>Toca el sobre para abrir la invitación</h2>
 </div>
+
+<!-- CONTENIDO -->
 <div id="contenido" style="display:none;">
+
 <audio id="music" loop controls>
   <source src="musica.mp3.mp3" type="audio/mpeg">
 </audio>
-  <section class="section-ornamentada">
 
-  <img src="ornamento-inferior.PNG" class="ornamento">
+<section class="section-ornamentada">
 
+<img src="ornamento-inferior.PNG" class="ornamento">
 
 <section class="hero">
   <h2>Mis XV Años</h2>
   <h1>Julia</h1>
   <p>18 de Julio de 2026</p>
 </section>
+
 <section>
   <h2>Cuenta Regresiva</h2>
-  <div id="countdown">
-    Cargando contador...
-  </div>
+  <div id="countdown">Cargando contador...</div>
 </section>
+
 <section>
   <h2>Con la bendición de Dios y de mis padres</h2>
   <p>Iván Flores Gutiérrez</p>
   <p>Eunice Samperio Servín</p>
+
   <h3>Mi Madrina</h3>
-<p>Rosa Elia Gutiérrez Panchi</p>
-    </a>
+  <p>Rosa Elia Gutiérrez Panchi</p>
 </section>
-  <section
+
+<section>
   <h2>Ceremonia Religiosa</h2>
   <p>Iglesia Bíblica Bautista Emmanuel</p>
   <a href="https://maps.app.goo.gl/oe4oJKoUNvtLcoGf9?g_st=ic" target="_blank">
     Ver ubicación de Emmanuel
   </a>
 </section>
+
 <section>
   <h2>Recepción</h2>
   <p>Salón Social Barlovento</p>
@@ -58,43 +68,63 @@
     Ver ubicación de Barlovento
   </a>
 </section>
+
 <section>
   <h2>Itinerario</h2>
   <p>🕔 5:00 PM - Ceremonia Religiosa</p>
   <p>6:00 PM - Recepción</p>
-  <p>6:30 PM - Entrada triunfal al salón</p>
-  <p>🥂 6:40 PM - Brindis</p>
-  <p>🍽️ 7:00 PM - Banquete de gala</p>
-  <p>🎂 8:00 PM - Partida de pastel</p>
-  <p>🍬 8:15 PM - Mesa de dulces</p>
-  <p>💃 8:30 PM - Protocolo de vals</p>
-  <p>🎉 9:00 PM - Apertura de pista</p>
+  <p>6:30 PM - Entrada triunfal</p>
+  <p>🥂 Brindis</p>
+  <p>🍽️ Banquete</p>
+  <p>🎂 Pastel</p>
+  <p>💃 Vals</p>
 </section>
+
 <section>
   <h2>Código de Vestimenta</h2>
   <p>Formal con toque Victoriano</p>
 </section>
-  <section>
+
+<section>
   <h2>Lluvia de Sobres</h2>
-  <p>
-    Tu presencia es el mejor regalo, pero si deseas tener un detalle conmigo,
-    agradeceré tu contribución para cumplir mis sueños.
-  </p>
+  <p>Tu presencia es el mejor regalo...</p>
+
   <p><strong>Banco Azteca</strong></p>
   <p>Cuenta: 127667016355367957</p>
   <p>Titular: Eunice Samperio Servín</p>
 
   <a
-href="https://wa.me/522481495795?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%20XV%20Años%20de%20Julia.%20Nos%20acompañarán%20___%20personas."
-class="boton-rsvp"
-target="_blank">
-
-Confirmar Asistencia
-</a>
-
-  <img src="ornamento-inferior.PNG" class="ornamento">
+    href="https://wa.me/522481495795?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%20XV%20Años%20de%20Julia."
+    target="_blank"
+  >
+    Confirmar Asistencia
+  </a>
 
 </section>
+
+<img src="ornamento-inferior.PNG" class="ornamento">
+
+</section>
+
 </div>
+
+<!-- JAVASCRIPT (ESTO ARREGLA EL SOBRE) -->
+<script>
+  const intro = document.getElementById("intro");
+  const contenido = document.getElementById("contenido");
+  const seal = document.getElementById("seal");
+  const music = document.getElementById("music");
+
+  seal.addEventListener("click", () => {
+    intro.style.display = "none";
+    contenido.style.display = "block";
+
+    // intenta reproducir música
+    music.play().catch(() => {
+      console.log("El navegador bloqueó autoplay");
+    });
+  });
+</script>
+
 </body>
 </html>
