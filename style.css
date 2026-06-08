@@ -8,10 +8,11 @@ box-sizing:border-box;
 html{
 scroll-behavior:smooth;
 }
-
 body{
 font-family:'Cinzel',serif;
 background:
+    url("ornamento-superior.PNG") top center no-repeat,
+  url("ornamento-inferior.PNG") bottom center no-repeat,
 radial-gradient(circle at center,
 rgba(212,175,55,.08),
 transparent 60%),
@@ -177,13 +178,4 @@ font-size:1.6rem;
 font-size:1.2rem;
 }
 
-}
-body{
-  background:
-  url("ornamento-superior.PNG") top center no-repeat,
-  url("ornamento-inferior.PNG") bottom center no-repeat,
-  radial-gradient(circle at center,
-  rgba(212,175,55,.08),
-  transparent 60%),
-  linear-gradient(180deg,#120a05 0%,#050303 100%);
-}
+
