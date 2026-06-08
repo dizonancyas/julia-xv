@@ -191,3 +191,53 @@ font-size:1.2rem;
   opacity:0.95;
 }
 
+  /* INTRO tipo carta */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #1a1a1a, #000);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #d8c7a3;
+  font-family: 'Cinzel', serif;
+  z-index: 9999;
+}
+
+/* Sobre con animación */
+#seal img {
+  width: 180px;
+  cursor: pointer;
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+#seal img:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 10px #c9b37a);
+}
+
+/* Animación de “carta revelándose” */
+@keyframes cartaAbrir {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(30px);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+.aparecer-carta {
+  animation: cartaAbrir 1.2s ease forwards;
+}
+
+/* Fondo elegante del contenido */
+#contenido {
+  background: url("papel-textura.jpg");
+  background-size: cover;
+  min-height: 100vh;
+}
