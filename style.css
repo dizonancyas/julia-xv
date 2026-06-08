@@ -1,4 +1,4 @@
-@import url(‘https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&display=swap’);
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&display=swap');
 
 *{
 margin:0;
@@ -11,7 +11,7 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:‘Cinzel’,serif;
+font-family:'Cinzel',serif;
 background:
 radial-gradient(circle at center,
 rgba(212,175,55,.08),
@@ -72,7 +72,7 @@ margin-bottom:10px;
 }
 
 .hero h1{
-font-family:‘Great Vibes’,cursive;
+font-family:'Great Vibes',cursive;
 font-size:6rem;
 color:#d4af37;
 text-shadow:
