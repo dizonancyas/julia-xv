@@ -5,7 +5,7 @@ const music = document.getElementById("music");
 
 if (seal) {
 
-seal.addEventListener("click", () => {
+seal.addEventListener("click"), () => {
 
 intro.style.display = "none";
 
