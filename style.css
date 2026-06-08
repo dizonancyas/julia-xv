@@ -38,13 +38,13 @@ align-items:center;
 background:#080404;
 z-index:999;
 }
-#seal img{
-width:220px;
-max-width:80%;
-cursor:pointer;
-transition:.4s;
+#seal{
+border:none;
+width:auto;
+height:auto;
+box-shadow:none;
+background:none;
 }
-
 #seal img:hover{
 transform:scale(1.05);
 }
