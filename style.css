@@ -5,16 +5,12 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 }
-
 html{
 scroll-behavior:smooth;
 }
+
 body{
-font-family:'Cinzel',serif;
-...
-overflow-x:hidden;
-overflow-y:auto;
-}
+font-family:‘Cinzel’,serif;
 background:
 radial-gradient(circle at center,
 rgba(212,175,55,.08),
@@ -26,6 +22,7 @@ linear-gradient(
 color:#f5e7c1;
 text-align:center;
 overflow-x:hidden;
+overflow-y:auto;
 }
 
 #intro{
@@ -41,30 +38,22 @@ align-items:center;
 background:#080404;
 z-index:999;
 }
+
 #seal{
-border:none;
-width:auto;
-height:auto;
-box-shadow:none;
-background:none;
+cursor:pointer;
+animation:pulse 2s infinite;
 }
+
+#seal img{
+width:220px;
+max-width:80vw;
+height:auto;
+display:block;
+transition:.4s;
+}
+
 #seal img:hover{
 transform:scale(1.05);
-}
-#seal{
-width:140px;
-height:140px;
-border-radius:75%;
-border:3px solid #d4af37;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:60px;
-cursor:pointer;
-box-shadow:
-0 0 20px rgba(212,175,55,.3),
-0 0 40px rgba(212,175,55,.15);
-animation:pulse 2s infinite;
 }
 
 #intro h2{
