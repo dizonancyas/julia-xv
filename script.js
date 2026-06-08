@@ -1,7 +1,7 @@
 const seal = document.getElementById("seal");
 const intro = document.getElementById("intro");
 const contenido = document.getElementById("contenido");
-const music = document.getElementById("Música");
+const music = document.getElementById("music");
 
 if (seal) {
   seal.addEventListener("click", () => {
