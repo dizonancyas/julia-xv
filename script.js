@@ -41,10 +41,10 @@ const seconds = Math.floor(
 
 if (countdown) {
 countdown.innerHTML =
-days + " días" +
-hours + " horas" +
-minutes + " minutos"+
-seconds + " segundos";
+days + " días " +
+hours + " horas " +
+minutes + " minutos "+
+seconds + " segundos ";
 }
 }
 
