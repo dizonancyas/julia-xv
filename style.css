@@ -178,3 +178,12 @@ font-size:1.2rem;
 }
 
 }
+body{
+  background:
+  url("ornamento-superior.png") top center no-repeat,
+  url("ornamento-inferior.png") bottom center no-repeat,
+  radial-gradient(circle at center,
+  rgba(212,175,55,.08),
+  transparent 60%),
+  linear-gradient(180deg,#120a05 0%,#050303 100%);
+}
