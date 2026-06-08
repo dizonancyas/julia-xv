@@ -6,32 +6,42 @@ const music = document.getElementById("music");
 if (seal) {
   seal.addEventListener("click", () => {
 
-    intro.style.display = "none";
-    contenido.style.display = "block";
+    seal.style.transform = "scale(1.3) rotate(-3deg)";
+    seal.style.opacity = "0";
 
-    if (music) {
-      music.play().catch(() => {
-        console.log("La reproducción automática fue bloqueada.");
-      });
-    }
+    setTimeout(() => {
+      if (intro) intro.style.display = "none";
+      if (contenido) {
+        contenido.style.display = "block";
+        contenido.classList.add("aparecer-carta");
+      }
+
+      if (music) {
+        music.play().catch(() => {
+          console.log("La reproducción automática fue bloqueada.");
+        });
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+    }, 700);
 
   });
 }
 
-const countdown = document.getElementById("countdown");
 
+// 🎯 COUNTDOWN
+const countdown = document.getElementById("countdown");
 const targetDate = new Date("July 18, 2026 00:00:00").getTime();
 
 function updateCountdown() {
-
   const now = new Date().getTime();
   const distance = targetDate - now;
+
   if (distance < 0) {
-  if (countdown) {
-    countdown.innerHTML = "¡Llegó el gran día!";
+    if (countdown) countdown.innerHTML = "¡Llegó el gran día!";
+    return;
   }
-  return;
-}
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -48,33 +58,4 @@ function updateCountdown() {
 }
 
 updateCountdown();
-setInterval(updateCountdown, <script>
-const intro = document.getElementById("intro");
-const contenido = document.getElementById("contenido");
-const seal = document.getElementById("seal");
-const music = document.getElementById("music");
-
-seal.addEventListener("click", () => {
-  // Animación del sobre
-  seal.style.transform = "scale(1.3) rotate(-3deg)";
-  seal.style.opacity = "0";
-
-  setTimeout(() => {
-    intro.style.display = "none";
-    contenido.style.display = "block";
-
-    // efecto carta
-    contenido.classList.add("aparecer-carta");
-
-    // música
-    if (music) {
-      music.play().catch(() => {});
-    }
-
-    // scroll suave al abrir
-    window.scrollTo({ top: 0, behavior: "smooth" });
-
-  }, 700);
-});
-</script>
-
+setInterval(updateCountdown, 1000);
