@@ -28,9 +28,8 @@ margin:auto;
 cursor:pointer;
 box-shadow:0 0 25px gold;
 }
-
 #contenido{
-display:none;
+display:block;
 }
 
 section{
