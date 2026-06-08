@@ -5,9 +5,9 @@ const music = document.getElementById("music");
 
 if (seal) {
 
-seal.addEventListener("click"), () => {
+seal.addEventListener("click", () => {
 
-intro.style.display = "block";
+intro.style.display = "none";
 
 contenido.style.display = "block";
 
@@ -23,9 +23,9 @@ console.log("La reproducción automática fue bloqueada.");
 
 }
 
-const countdown = document.getElementById(“countdown”);
+const countdown = document.getElementById("countdown");
 
-const targetDate = new Date(“July 18, 2026 00:00:00”).getTime();
+const targetDate = new Date("July 18, 2026 00:00:00").getTime();
 
 function updateCountdown(){
 
@@ -35,7 +35,7 @@ const distance = targetDate - now;
 
 if(distance < 0){
 
-countdown.innerHTML = “¡Llegó el gran día!”;
+countdown.innerHTML = " por fin ¡Llegó el gran día!";
 
 return;
 
