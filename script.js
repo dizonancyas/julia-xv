@@ -1,12 +1,12 @@
-const seal = document.getElementById(“seal”);
-const intro = document.getElementById(“intro”);
-const contenido = document.getElementById(“contenido”);
-const music = document.getElementById(“music”);
+const seal = document.getElementById("seal");
+const intro = document.getElementById("intro");
+const contenido = document.getElementById("contenido");
+const music = document.getElementById("music");
 
 if (seal) {
-seal.addEventListener(“click”, () => {
-intro.style.display = “none”;
-contenido.style.display = “block”;
+seal.addEventListener("click", () => {
+intro.style.display = "none";
+contenido.style.display = "block";
 
 if (music) {
   music.play();
@@ -15,9 +15,9 @@ if (music) {
 });
 }
 
-const countdown = document.getElementById(“countdown”);
+const countdown = document.getElementById("countdown");
 
-const targetDate = new Date(“July 18, 2026 00:00:00”).getTime();
+const targetDate = new Date("July 18, 2026 00:00:00").getTime();
 
 function updateCountdown() {
 const now = new Date().getTime();
@@ -41,10 +41,10 @@ const seconds = Math.floor(
 
 if (countdown) {
 countdown.innerHTML =
-days + “ días” +
-hours + “ horas” +
-minutes + “ minutos” +
-seconds + “ segundos”;
+days + " días" +
+hours + " horas" +
+minutes + " minutos"+
+seconds + " segundos";
 }
 }
 
