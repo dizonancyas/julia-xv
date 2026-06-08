@@ -7,7 +7,7 @@ if (seal) {
 
 seal.addEventListener("click"), () => {
 
-intro.style.display = "none";
+intro.style.display = "block";
 
 contenido.style.display = "block";
 
