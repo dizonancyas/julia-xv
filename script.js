@@ -26,11 +26,12 @@ function updateCountdown() {
 
   const now = new Date().getTime();
   const distance = targetDate - now;
-
   if (distance < 0) {
+  if (countdown) {
     countdown.innerHTML = "¡Llegó el gran día!";
-    return;
   }
+  return;
+}
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
