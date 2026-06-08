@@ -104,3 +104,18 @@ font-size:7rem;
 }
 
 }
+.rsvp{
+text-align:center;
+}
+
+.boton-rsvp{
+display:inline-block;
+padding:18px 30px;
+background:gold;
+color:black !important;
+text-decoration:none;
+font-weight:bold;
+border-radius:12px;
+margin-top:20px;
+font-size:18px;
+}
