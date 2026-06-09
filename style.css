@@ -13,7 +13,7 @@ font-family:'Cinzel',serif;
 background:
 radial-gradient(circle at center,
 rgba(212,175,55,.08),
-transparent 10%),
+transparent 5%),
 linear-gradient(
 180deg,
 #120a05 0%,
@@ -138,10 +138,10 @@ color:#111 !important;
 text-decoration:none;
 font-weight:bold;
 border-radius:12px;
-transition:1s;
+transition:2.1s;
 }
 
-.boton-rsvp:hover{
+.tboton-rsvp:hover{
 transform:scale(1.05);
 }
 
@@ -209,7 +209,7 @@ font-size:1.2rem;
 #seal img {
   width: 180px;
   cursor: pointer;
-  transition: transform 0.6s ease, filter 0.6s ease;
+  transition: transform 1.6s ease, filter 0.6s ease;
 }
 
 #seal img:hover {
