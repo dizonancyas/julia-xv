@@ -13,7 +13,7 @@ font-family:'Cinzel',serif;
 background:
 radial-gradient(circle at center,
 rgba(212,175,55,.08),
-transparent 5%),
+transparent 3%),
 linear-gradient(
 180deg,
 #120a05 0%,
@@ -126,7 +126,7 @@ font-weight:bold;
 color:#d4af37;
 box-shadow:
 0 0 20px rgba(212,175,55,.2);
-animation:pulse 2s infinite;
+animation:pulse 3.2s infinite;
 }
 
 .boton-rsvp{
@@ -209,7 +209,7 @@ font-size:1.2rem;
 #seal img {
   width: 180px;
   cursor: pointer;
-  transition: transform 1.6s ease, filter 0.6s ease;
+  transition: transform 2.6s ease, filter 0.6s ease;
 }
 
 #seal img:hover {
@@ -232,7 +232,7 @@ font-size:1.2rem;
 }
 
 .aparecer-carta {
-  animation: cartaAbrir 1.2s ease forwards;
+  animation: cartaAbrir 2s ease forwards;
 }
 
 /* Fondo elegante del contenido */
@@ -251,7 +251,7 @@ font-size:1.2rem;
   section{
   max-width: 700px;
   margin: 0 auto;
-    animation:pulse 2s infinite;
+
 }
 
 .hero h1{
@@ -266,7 +266,7 @@ font-size:1.2rem;
   display:inline-block;
   margin:15px auto;
   padding:14px 28px;
-    animation:pulse 4s infinite;
+    
 
   background:linear-gradient(
     180deg,
@@ -300,5 +300,5 @@ font-size:1.2rem;
 
 .boton-victoriano:active{
   transform:translateY(1px)
-  animation:pulse 2s infinite;
+  
 }
