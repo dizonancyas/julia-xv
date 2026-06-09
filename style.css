@@ -236,13 +236,11 @@ font-size:1.2rem;
 }
 
 /* Fondo elegante del contenido */
-#contenido {
   #contenido{
   background-image: url("image.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: 100% auto;
-}
 }
   .corona{
   width:120px;
