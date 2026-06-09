@@ -241,3 +241,19 @@ font-size:1.2rem;
   background-size: cover;
   min-height: 100vh;
 }
+  .corona{
+  width:120px;
+  height:auto;
+  display:block;
+  margin:0 auto 15px auto;
+  filter: drop-shadow(0 0 12px rgba(212,175,55,.5));
+}
+
+.hero h1{
+  font-family:'Great Vibes', cursive;
+  font-size:5rem;
+  color:#d4af37;
+  text-shadow:
+    0 0 10px rgba(212,175,55,.4),
+    0 0 20px rgba(212,175,55,.2);
+}
