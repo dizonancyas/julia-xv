@@ -239,7 +239,7 @@ font-size:1.2rem;
   #contenido{
   background-image: url("image.jpg");
   background-position: center top;
-  background-repeat: no-repeat;
+  background-repeat: yes-repeat;
   background-size: 100% auto;
 }
   .corona{
