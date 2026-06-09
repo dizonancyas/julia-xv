@@ -84,8 +84,8 @@ text-shadow:
 }
 
 .hero p{
-font-size:2.5rem;
-margin-top:15px;
+font-size:3.5rem;
+margin-top:5px;
 }
 section{
 width:90%;
@@ -111,8 +111,8 @@ margin:20px 0 10px;
 }
 
 p{
-line-height:2.7;
-margin:12px 0;
+line-height:1.4;
+margin:5px 0;
 }
 
 a{o
@@ -434,7 +434,7 @@ font-size:1.2rem;
     display: block;
 }
   h2,h3,p,a,strong{
-  -webkit-text-stroke: 0.2px rgba(0,0,0,.7);
+  -webkit-text-stroke: 0.8px rgba(0,0,0,.7);
 
   text-shadow:
     1px 1px 1px rgba(0,0,0,.8);
