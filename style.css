@@ -237,16 +237,22 @@ font-size:1.2rem;
 
 /* Fondo elegante del contenido */
 #contenido {
-  background: url("image.jpg");
-  background-size: cover;
-  min-height: 50vh;
+  #contenido{
+  background-image: url("image.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
 }
   .corona{
   width:120px;
   height:auto;
   display:block;
   margin:0 auto 15px auto;
-  filter: drop-shadow(0 0 12px rgba(212,175,55,.5));
+  filter: drop-shadow(0 0 12px rgba(212,175,55,.5));}
+  section{
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .hero h1{
