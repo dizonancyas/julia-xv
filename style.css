@@ -222,7 +222,7 @@ font-size:1.2rem;
   0% {
     opacity: 0;
     transform: scale(0.95) translateY(30px);
-    filter: blur(15px);
+    filter: blur(30px);
   }
   100% {
     opacity: 1;
@@ -258,9 +258,15 @@ font-size:1.2rem;
   font-family:'Great Vibes', cursive;
   font-size:5rem;
   color:#d4af37;
+  position:relative;
+  display:inline-block;
+  padding-left:25px;
+  padding-right:15px;
   text-shadow:
-    0 0 10px rgba(212,175,55,.4),
-    0 0 20px rgba(212,175,55,.2);
+    0 0 10px rgba(212,175,55,.7),
+    0 0 20px rgba(212,175,55,.4),
+    2px 2px 4px rgba(0,0,0,.3);
+  overflow:hidden;
 }
   .boton-victoriano{
   display:inline-block;
