@@ -13,7 +13,7 @@ font-family:'Cinzel',serif;
 background:
 radial-gradient(circle at center,
 rgba(212,175,55,.08),
-transparent 60%),
+transparent 40%),
 linear-gradient(
 180deg,
 #120a05 0%,
@@ -239,7 +239,7 @@ font-size:1.2rem;
 #contenido {
   background: url("image.jpg");
   background-size: cover;
-  min-height: 100vh;
+  min-height: 50vh;
 }
   .corona{
   width:120px;
