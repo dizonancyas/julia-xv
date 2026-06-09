@@ -11,8 +11,8 @@ scroll-behavior:smooth;
 
   body{
   text-shadow:
-    2px 1px 5px rgba(60,40,20,.10);
-     0 0 10px rgba(0,0,0,.4);
+    2px 2px 5px rgba(60,40,20,10);
+     0 0 20px rgba(0,0,0,.9);
 font-family:'Cinzel',serif;
 background:
 radial-gradient(circle at center,
