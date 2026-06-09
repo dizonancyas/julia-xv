@@ -13,6 +13,7 @@ scroll-behavior:smooth;
   text-shadow:
     10px 7px 3px rgba(60,40,20,10);
      0 0 20px rgba(0,0,0,.9);
+    -webkit-text-stroke: 1px black;
 font-family:'Cinzel',serif;
 background:
 radial-gradient(circle at center,
