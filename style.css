@@ -13,7 +13,7 @@ font-family:'Cinzel',serif;
 background:
 radial-gradient(circle at center,
 rgba(212,175,55,.08),
-transparent 40%),
+transparent 10%),
 linear-gradient(
 180deg,
 #120a05 0%,
@@ -138,7 +138,7 @@ color:#111 !important;
 text-decoration:none;
 font-weight:bold;
 border-radius:12px;
-transition:.3s;
+transition:1s;
 }
 
 .boton-rsvp:hover{
@@ -222,7 +222,7 @@ font-size:1.2rem;
   0% {
     opacity: 0;
     transform: scale(0.95) translateY(30px);
-    filter: blur(8px);
+    filter: blur(15px);
   }
   100% {
     opacity: 1;
@@ -251,6 +251,7 @@ font-size:1.2rem;
   section{
   max-width: 700px;
   margin: 0 auto;
+    animation:pulse 2s infinite;
 }
 
 .hero h1{
@@ -265,6 +266,7 @@ font-size:1.2rem;
   display:inline-block;
   margin:15px auto;
   padding:14px 28px;
+    animation:pulse 4s infinite;
 
   background:linear-gradient(
     180deg,
@@ -286,7 +288,7 @@ font-size:1.2rem;
     0 0 15px rgba(212,175,55,.4),
     inset 0 0 8px rgba(255,255,255,.4);
 
-  transition:.3s ease;
+  transition:.5s ease;
 }
 
 .boton-victoriano:hover{
@@ -297,5 +299,6 @@ font-size:1.2rem;
 }
 
 .boton-victoriano:active{
-  transform:translateY(1px);
+  transform:translateY(1px)
+  animation:pulse 2s infinite;
 }
