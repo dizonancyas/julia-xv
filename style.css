@@ -237,7 +237,7 @@ font-size:1.2rem;
 
 /* Fondo elegante del contenido */
 #contenido {
-  background: url("papel-textura.jpg");
+  background: url("image.jpg");
   background-size: cover;
   min-height: 100vh;
 }
