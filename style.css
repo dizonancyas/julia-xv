@@ -91,8 +91,12 @@ margin:35px auto;
 padding:35px;
 border-radius:25px;
 border:1px solid rgba(212,175,55,.25);
-background:rgba(231,179,154,.5);
-border:1px solid rgba(212,175,55,.25);
+
+background:rgba(255,248,240,.5);
+
+backdrop-filter:blur(6px);
+-webkit-backdrop-filter:blur(6px);
+
 box-shadow:0 10px 30px rgba(0,0,0,.5);
 }
 
