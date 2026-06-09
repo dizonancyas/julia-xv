@@ -115,17 +115,18 @@ margin:10px 0;
 a{
 color:#f5e7c1;
 }
-
 #countdown{
-display:inline-block;
-padding:25px;
-border:2px solid #d4af37;
-border-radius:20px;
-font-size:1.5rem;
-font-weight:bold;
-color:#d4af37;
-box-shadow:
-0 0 20px rgba(212,175,55,.2);
+  background: #E7B39A;
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 15px;
+  border: 2px solid #d4af37;
+  display: inline-block;
+  font-size: 2rem;
+  font-family: 'Cinzel', serif;
+  box-shadow:
+    0 0 15px rgba(212,175,55,.3),
+    0 4px 15px rgba(0,0,0,.2);
 animation:pulse 3.2s infinite;
 }
 
