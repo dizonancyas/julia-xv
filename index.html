@@ -102,31 +102,11 @@
    💌 Confirmar Asistencia
 </a>
 
-</section>
 
+  </section>
 <img src="ornamento-inferior.PNG" class="ornamento">
-
 </section>
-
 </div>
-
-<!-- JAVASCRIPT (ESTO ARREGLA EL SOBRE) -->
-<script>
-  const intro = document.getElementById("intro");
-  const contenido = document.getElementById("contenido");
-  const seal = document.getElementById("seal");
-  const music = document.getElementById("music");
-
-  seal.addEventListener("click", () => {
-    intro.style.display = "none";
-    contenido.style.display = "block";
-
-    // intenta reproducir música
-    music.play().catch(() => {
-      console.log("El navegador bloqueó autoplay");
-    });
-  });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
