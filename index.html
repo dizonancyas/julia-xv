@@ -1,13 +1,27 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis XV Años - Elisa Serrano Serrano</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
+        :root {
+            --primary-rose: #f8bbd0;
+            --deep-rose: #8a3a50;
+            --rose-gold: #e0a96d;
+            --gold-accent: #d4af37;
+            --bg-gradient: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 40%, #f7e7ce 100%);
+            --envelope-color: #f7d6e0;
+            --envelope-inner: #f2c4ce;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -15,54 +29,259 @@
         }
 
         body {
-            background-color: #f7e7ce;
-            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f7e7ce 100%);
+            background: var(--bg-gradient);
             font-family: 'Montserrat', sans-serif;
-          …
-[1:04 a.m., 8/10/2026] dizonancyas: <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis XV Años - Elisa Serrano Serrano</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            color: #4a2c35;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        body {
-            background-color: #f7e7ce;
-            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f7e7ce 100%);
-            font-family: 'Montserrat', sans-serif;
+        /* Sparkle Particle Canvas Background */
+        #sparkle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* --- STREAMING_CHUNK:Styling Envelope Screen Modal... --- */
+        .envelope-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            background: linear-gradient(135deg, #fce4ec 0%, #e8a0bf 50%, #d4a373 100%);
+            transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out;
+            perspective: 1000px;
+            padding: 20px;
+        }
+
+        .envelope-screen.opened {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* Floating particles around envelope */
+        .envelope-glow {
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(248,187,208,0.2) 60%, transparent 80%);
+            border-radius: 50%;
+            filter: blur(20px);
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(0.9); opacity: 0.6; }
+            100% { transform: scale(1.15); opacity: 1; }
+        }
+
+        /* Envelope Wrapper for 3D Flip & Flap */
+        .envelope-container {
+            position: relative;
+            width: 320px;
+            height: 220px;
+            cursor: pointer;
+            perspective: 1200px;
+            transition: transform 0.3s ease;
+            z-index: 20;
+        }
+
+        .envelope-container:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .envelope-base {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--envelope-color);
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(138, 58, 80, 0.3), 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 2px solid rgba(212, 175, 55, 0.4);
+        }
+
+        .envelope-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(#d4af37 0.75px, transparent 0.75px);
+            background-size: 16px 16px;
+            opacity: 0.15;
+        }
+
+        /* Pocket folds */
+        .envelope-left {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 110px 0 0 160px;
+            border-color: transparent transparent transparent #f4c2cb;
+            z-index: 3;
+        }
+
+        .envelope-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 110px 160px;
+            border-color: transparent transparent #efb7c3 transparent;
+            z-index: 3;
+        }
+
+        .envelope-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 160px 120px 160px;
+            border-color: transparent transparent #eaacbb transparent;
+            z-index: 4;
+        }
+
+        /* Top Flap */
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 125px 160px 0 160px;
+            border-color: #fce0e6 transparent transparent transparent;
+            transform-origin: top;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 5;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+        }
+
+        .envelope-container.open .envelope-flap {
+            transform: rotateX(180deg);
+            z-index: 1;
+        }
+
+        /* Letter Inside Envelope */
+        .envelope-letter {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            width: 280px;
+            height: 180px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.8s ease-in-out 0.4s;
+            z-index: 2;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #f8bbd0;
+        }
+
+        .envelope-container.open .envelope-letter {
+            transform: translateY(-80px) scale(1.05);
+        }
+
+        /* Wax Seal Button */
+        .wax-seal {
+            position: absolute;
+            top: 110px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 65px;
+            height: 65px;
+            background: radial-gradient(circle, #d4af37 0%, #b38728 70%, #8a6414 100%);
+            border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 10px 0 80px 0;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.4);
+            z-index: 6;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            border: 2px solid #fce4ec;
         }
 
+        .wax-seal i {
+            font-size: 1.8rem;
+            color: #fdfbf7;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .envelope-container.open .wax-seal {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.5);
+        }
+
+        .tap-instruction {
+            margin-top: 25px;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #5c2030;
+            letter-spacing: 1.5px;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-shadow: 0 1px 3px rgba(255,255,255,0.8);
+            animation: bouncePrompt 2s infinite;
+        }
+
+        @keyframes bouncePrompt {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        /* --- STREAMING_CHUNK:Styling Main Card View & Elements... --- */
         .main-wrapper {
             width: 100%;
             max-width: 480px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 0 10px;
+            padding: 15px 12px 90px 12px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease 0.5s, transform 1s ease 0.5s;
         }
 
-        /* Contenedor de la Imagen e Interactividad */
+        .main-wrapper.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Main Invitation Image Card */
         .image-container {
             position: relative;
             width: 100%;
-            border-radius: 16px;
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 12px 35px rgba(138, 58, 80, 0.25);
             background: #fff;
+            border: 3px solid rgba(224, 169, 109, 0.5);
         }
 
         .invitation-img {
@@ -71,56 +290,57 @@
             display: block;
         }
 
-        /* Capas invisibles sobre las direcciones en la imagen para Google Maps */
+        /* Overlay Google Maps clickable hotspots on image */
         .location-overlay-misa {
             position: absolute;
-            top: 42%;
-            left: 10%;
-            width: 80%;
+            top: 41.5%;
+            left: 8%;
+            width: 84%;
             height: 5.5%;
             cursor: pointer;
             border-radius: 8px;
             background: rgba(255, 255, 255, 0.0);
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, border 0.3s ease;
         }
 
         .location-overlay-recepcion {
             position: absolute;
-            top: 48%;
-            left: 10%;
-            width: 80%;
+            top: 47.8%;
+            left: 8%;
+            width: 84%;
             height: 6%;
             cursor: pointer;
             border-radius: 8px;
             background: rgba(255, 255, 255, 0.0);
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, border 0.3s ease;
         }
 
         .location-overlay-misa:hover, .location-overlay-recepcion:hover {
-            background: rgba(212, 160, 23, 0.15);
-            border: 1px dashed #d4af37;
+            background: rgba(212, 175, 55, 0.18);
+            border: 1.5px dashed var(--gold-accent);
         }
 
-        /* Sección del Contador Regresivo */
+        /* Countdown Section */
         .countdown-section {
             width: 100%;
-            margin-top: 20px;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 20px 15px;
+            margin-top: 22px;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(12px);
+            border-radius: 18px;
+            padding: 22px 16px;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-            border: 2px solid #e0a96d;
+            box-shadow: 0 10px 25px rgba(138, 58, 80, 0.12);
+            border: 2px solid var(--rose-gold);
         }
 
         .countdown-title {
             font-family: 'Cinzel', serif;
-            color: #8a3a50;
-            font-size: 1.1rem;
-            margin-bottom: 12px;
+            color: var(--deep-rose);
+            font-size: 1.15rem;
+            margin-bottom: 14px;
             letter-spacing: 1px;
             text-transform: uppercase;
+            font-weight: 700;
         }
 
         .timer-grid {
@@ -136,71 +356,72 @@
         }
 
         .time-value {
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: #722f37;
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--deep-rose);
             background: #fff0f3;
-            padding: 8px 12px;
-            border-radius: 8px;
-            min-width: 55px;
-            box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
-            border: 1px solid #f8bbd0;
+            padding: 10px 14px;
+            border-radius: 10px;
+            min-width: 58px;
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.05);
+            border: 1px solid var(--primary-rose);
         }
 
         .time-label {
             font-size: 0.75rem;
-            color: #666;
-            margin-top: 5px;
+            color: #777;
+            margin-top: 6px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
         }
 
-        /* Botón de Confirmación WhatsApp */
+        /* WhatsApp Button Section */
         .whatsapp-section {
             width: 100%;
-            margin-top: 15px;
-            margin-bottom: 20px;
+            margin-top: 18px;
         }
 
         .btn-whatsapp {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             width: 100%;
             background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             color: white;
             text-decoration: none;
-            padding: 16px;
+            padding: 18px;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 1.05rem;
-            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+            font-size: 1.08rem;
+            box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .btn-whatsapp:active {
-            transform: scale(0.98);
+            transform: scale(0.97);
         }
 
         .btn-whatsapp i {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
         }
 
-        /* Control Flotante de Música */
+        /* Floating Music Button */
         .music-btn {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 52px;
-            height: 52px;
-            background: linear-gradient(135deg, #e0a96d 0%, #8a3a50 100%);
+            bottom: 22px;
+            right: 22px;
+            width: 54px;
+            height: 54px;
+            background: linear-gradient(135deg, var(--rose-gold) 0%, var(--deep-rose) 100%);
             color: white;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.3rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            font-size: 1.35rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
             cursor: pointer;
             z-index: 1000;
             border: 2px solid #fff;
@@ -208,50 +429,78 @@
         }
 
         .music-btn.playing i {
-            animation: spin 3s linear infinite;
+            animation: spinMusic 3.5s linear infinite;
         }
 
-        @keyframes spin {
+        @keyframes spinMusic {
             100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Reproductor de Audio -->
-    <!-- Reemplaza "musica.mp3" con la ruta de tu archivo de música en GitHub si usas otro archivo -->
-    <audio id="bg-music" loop>
+    <!-- Canvas Background for Sparkles -->
+    <canvas id="sparkle-canvas"></canvas>
+
+    <audio id="bg-music" loop preload="auto">
         <source src="musica.mp3" type="audio/mpeg">
-       <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
-      
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Botón Flotante para Encender/Pausar Música -->
-    <div class="music-btn" id="music-toggle" title="Reproducir/Pausar música">
+    <div class="music-btn" id="music-toggle" title="Reproducir / Pausar Música">
         <i class="fas fa-music"></i>
-     
     </div>
 
-    <div class="main-wrapper">
+    <div class="envelope-screen" id="envelopeScreen">
+        <div class="envelope-glow"></div>
         
-        <!-- 1. Imagen de la Invitación scrolleable con capas táctiles -->
+        <div class="envelope-container" id="envelopeContainer">
+            <div class="envelope-base">
+                <div class="envelope-pattern"></div>
+                
+                <!-- Inner Letter -->
+                <div class="envelope-letter">
+                    <p style="font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--deep-rose);">Mis XV Años</p>
+                    <p style="font-family: 'Cinzel', serif; font-size: 1rem; color: var(--rose-gold); margin-top: 5px; font-weight:700;">Elisa Serrano</p>
+                </div>
+
+                <div class="envelope-left"></div>
+                <div class="envelope-right"></div>
+                <div class="envelope-bottom"></div>
+                <div class="envelope-flap"></div>
+                
+                <!-- Wax Seal -->
+                <div class="wax-seal">
+                    <i class="fas fa-crown"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="tap-instruction">
+            <i class="fas fa-hand-pointer" style="margin-right: 6px;"></i> Click para abrir invitación de Elisa
+        </div>
+    </div>
+
+    <div class="main-wrapper" id="mainWrapper">
+        
+        <!-- Invitation Card with Interactive Overlay Hotspots -->
         <div class="image-container">
-            <img src="image.jpg" alt="Invitación Elisa Serrano Serrano" class="invitation-img">
+            <img src="image.jpg" alt="Invitación Mis XV Años - Elisa Serrano Serrano" class="invitation-img" id="invitationImage" onerror="this.onerror=null; this.src='https://placehold.co/480x850/f8bbd0/8a3a50?text=Invitacion+Elisa+Serrano';">
             
-            <!-- Enlace interactivo sobre la Misa -->
+            <!-- Hotspot Misa -->
             <a href="https://maps.google.com/?q=Santuario+San+Miguel+del+Milagro+Tlaxcala" 
                target="_blank" 
                class="location-overlay-misa" 
                title="Ver ubicación de la Misa en Google Maps"></a>
 
-            <!-- Enlace interactivo sobre la Recepción -->
+            <!-- Hotspot Recepción -->
             <a href="https://maps.google.com/?q=Av.+Revolucion+131+San+Rafael+Tenanyecac" 
                target="_blank" 
                class="location-overlay-recepcion" 
                title="Ver ubicación de la Recepción en Google Maps"></a>
         </div>
 
-        <!-- 2. Contador Regresivo debajo de la imagen -->
+        <!-- Real-Time Countdown Timer -->
         <div class="countdown-section">
             <div class="countdown-title">Faltan para el gran día</div>
             <div class="timer-grid">
@@ -274,7 +523,7 @@
             </div>
         </div>
 
-        <!-- 3. Botón de WhatsApp debajo del contador -->
+        <!-- WhatsApp RSVP Confirmation Button -->
         <div class="whatsapp-section">
             <a href="https://wa.me/522223711331?text=%C2%A1Hola!%20Con%20mucho%20gusto%20confirmo%20mi%20asistencia%20a%20los%20XV%20A%C3%B1os%20de%20Elisa%20Serrano%20Serrano." 
                target="_blank" 
@@ -285,9 +534,116 @@
 
     </div>
 
-    <!-- Script para Contador y Control de Música -->
     <script>
-        // --- Contador Regresivo ---
+        // --- 1. Sparkle Canvas Animation Engine ---
+        const canvas = document.getElementById('sparkle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2.5 + 0.5;
+                this.alpha = Math.random();
+                this.speedAlpha = Math.random() * 0.02 + 0.005;
+                this.vy = - (Math.random() * 0.4 + 0.1);
+            }
+
+            update() {
+                this.y += this.vy;
+                this.alpha += this.speedAlpha;
+                if (this.alpha > 1 || this.alpha < 0) {
+                    this.speedAlpha = -this.speedAlpha;
+                }
+                if (this.y < 0) {
+                    this.reset();
+                    this.y = canvas.height;
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = Math.max(0, this.alpha);
+                ctx.fillStyle = '#d4af37';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        for (let i = 0; i < 50; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // --- 2. Interactive Envelope Opening & Smooth Transition ---
+        const envelopeContainer = document.getElementById('envelopeContainer');
+        const envelopeScreen = document.getElementById('envelopeScreen');
+        const mainWrapper = document.getElementById('mainWrapper');
+        const music = document.getElementById('bg-music');
+        const musicBtn = document.getElementById('music-toggle');
+        let isPlaying = false;
+
+        function startMusic() {
+            if (!isPlaying) {
+                music.play().then(() => {
+                    musicBtn.classList.add('playing');
+                    isPlaying = true;
+                }).catch(err => {
+                    console.log('Autoplay restriction:', err);
+                });
+            }
+        }
+
+        function toggleMusic() {
+            if (isPlaying) {
+                music.pause();
+                musicBtn.classList.remove('playing');
+                isPlaying = false;
+            } else {
+                startMusic();
+            }
+        }
+
+        musicBtn.addEventListener('click', toggleMusic);
+
+        envelopeScreen.addEventListener('click', function() {
+            // Unfold envelope flap
+            envelopeContainer.classList.add('open');
+            
+            // Trigger music
+            startMusic();
+
+            // Seamless transition to invitation body after unfolding animation
+            setTimeout(() => {
+                envelopeScreen.classList.add('opened');
+                mainWrapper.classList.add('visible');
+            }, 1000);
+        });
+
+        // --- 3. Live Countdown Timer (Event Date: Nov 21, 2026 14:00:00) ---
         const targetDate = new Date("November 21, 2026 14:00:00").getTime();
 
         function updateCountdown() {
@@ -314,36 +670,6 @@
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
-
-        // --- Manejo de la Música de Fondo ---
-        const music = document.getElementById("bg-music");
-        const musicBtn = document.getElementById("music-toggle");
-        let isPlaying = false;
-
-        function toggleMusic() {
-            if (isPlaying) {
-                music.pause();
-                musicBtn.classList.remove("playing");
-                isPlaying = false;
-            } else {
-                music.play().then(() => {
-                    musicBtn.classList.add("playing");
-                    isPlaying = true;
-                }).catch(err => {
-                    console.log("Autoplay bloqueado por el navegador:", err);
-                });
-            }
-        }
-
-        musicBtn.addEventListener("click", toggleMusic);
-
-        // Iniciar música automáticamente al primer toque/clic en cualquier parte de la pantalla
-        document.body.addEventListener("click", function startOnFirstTouch() {
-            if (!isPlaying) {
-                toggleMusic();
-            }
-            document.body.removeEventListener("click", startOnFirstTouch);
-        }, { once: true });
     </script>
 </body>
 </html>
