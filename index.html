@@ -1,4 +1,25 @@
-<!DOCTYPE html>
+[12:57 a.m., 8/10/2026] dizonancyas: <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis XV Años - Elisa Serrano Serrano</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f7e7ce;
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f7e7ce 100%);
+            font-family: 'Montserrat', sans-serif;
+          …
+[1:04 a.m., 8/10/2026] dizonancyas: <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +43,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 10px 0 40px 0;
+            padding: 10px 0 80px 0;
         }
 
         .main-wrapper {
@@ -164,15 +185,55 @@
         .btn-whatsapp i {
             font-size: 1.4rem;
         }
+
+        /* Control Flotante de Música */
+        .music-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #e0a96d 0%, #8a3a50 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 1000;
+            border: 2px solid #fff;
+            transition: transform 0.2s ease;
+        }
+
+        .music-btn.playing i {
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Reproductor de Audio -->
+    <!-- Reemplaza "musica.mp3" con la ruta de tu archivo de música en GitHub si usas otro archivo -->
+    <audio id="bg-music" loop>
+        <source src="musica.mp3.mp3" type="audio/mpeg">
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Botón Flotante para Encender/Pausar Música -->
+    <div class="music-btn" id="music-toggle" title="Reproducir/Pausar música">
+        <i class="fas fa-music"></i>
+    </div>
 
     <div class="main-wrapper">
         
         <!-- 1. Imagen de la Invitación scrolleable con capas táctiles -->
         <div class="image-container">
-            <!-- Asegúrate de renombrar tu archivo de imagen como "image.png" en tu carpeta de GitHub -->
             <img src="image.jpg" alt="Invitación Elisa Serrano Serrano" class="invitation-img">
             
             <!-- Enlace interactivo sobre la Misa -->
@@ -222,8 +283,9 @@
 
     </div>
 
-    <!-- Script para activar el contador dinámico -->
+    <!-- Script para Contador y Control de Música -->
     <script>
+        // --- Contador Regresivo ---
         const targetDate = new Date("November 21, 2026 14:00:00").getTime();
 
         function updateCountdown() {
@@ -250,6 +312,36 @@
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
+
+        // --- Manejo de la Música de Fondo ---
+        const music = document.getElementById("bg-music");
+        const musicBtn = document.getElementById("music-toggle");
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                music.pause();
+                musicBtn.classList.remove("playing");
+                isPlaying = false;
+            } else {
+                music.play().then(() => {
+                    musicBtn.classList.add("playing");
+                    isPlaying = true;
+                }).catch(err => {
+                    console.log("Autoplay bloqueado por el navegador:", err);
+                });
+            }
+        }
+
+        musicBtn.addEventListener("click", toggleMusic);
+
+        // Iniciar música automáticamente al primer toque/clic en cualquier parte de la pantalla
+        document.body.addEventListener("click", function startOnFirstTouch() {
+            if (!isPlaying) {
+                toggleMusic();
+            }
+            document.body.removeEventListener("click", startOnFirstTouch);
+        }, { once: true });
     </script>
 </body>
 </html>
